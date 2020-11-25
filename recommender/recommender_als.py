@@ -4,6 +4,7 @@ from pyspark.ml.feature import VectorAssembler,VectorIndexer,OneHotEncoder,Strin
 from pyspark.ml.recommendation import ALS
 from pyspark.ml.evaluation import RegressionEvaluator
 
+
 if __name__ == "__main__":
 
     spark = SparkSession \
@@ -24,15 +25,16 @@ if __name__ == "__main__":
     
     # Transform the test data using the model to get predictions
     predicted_test_data = model.transform(test_data)
+    model.write().overwrite().save("hdfs://master.tibame/user/clubs/spark_mllib_101/movies/movies_recommender/")
 
     # Evalute model performance with test set
     evaluator = RegressionEvaluator(predictionCol="prediction", labelCol="rating", metricName="rmse")
     print("rmse: {}".format(evaluator.evaluate(predicted_test_data)))
 
     # Specify the number of movies you would like to recommand for each user
-    #user_movies = model.recommendForAllUsers(3)
-    #user_movies.show(100, truncate=False)
-
+    user_movies = model.recommendForAllUsers(3)
+    user_movies.show(100, truncate=False)
+    result = user_movies.filter(user_movies.userId == 544).collect()
     # The users who are most likely to like a particular movie
     #movie_uers = model.recommendForAllItems(3)
     #movie_uers.show(100, truncate=False)
