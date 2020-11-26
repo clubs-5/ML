@@ -34,7 +34,13 @@ if __name__ == "__main__":
     # Specify the number of movies you would like to recommand for each user
     user_movies = model.recommendForAllUsers(3)
     user_movies.show(100, truncate=False)
+
+    # return specific user result
     result = user_movies.filter(user_movies.userId == 544).collect()
+
+    # Generate top 10 movie recommendations for a specified set of users
+    users = final_data.select(als.getUserCol()).distinct().limit(3)
+    userSubsetRecs = model.recommendForUserSubset(users, 10)
     # The users who are most likely to like a particular movie
     #movie_uers = model.recommendForAllItems(3)
     #movie_uers.show(100, truncate=False)
