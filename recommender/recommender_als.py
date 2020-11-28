@@ -31,7 +31,7 @@ if __name__ == "__main__":
 
     # Evalute model performance with test set
     evaluator = RegressionEvaluator(predictionCol="prediction", labelCol="rating", metricName="rmse")
-    print("rmse: {}".format(evaluator.evaluate(predicted_test_data)))
+    #print("rmse: {}".format(evaluator.evaluate(predicted_test_data)))
     stop=time.time()
     print(stop-start)
 
@@ -41,6 +41,7 @@ if __name__ == "__main__":
 
     # return specific user result
     result = user_movies.filter(user_movies.userId == 544).collect()
+    print(result)
 
     # Generate top 10 movie recommendations for a specified set of users
     users = final_data.select(als.getUserCol()).distinct().limit(3)
