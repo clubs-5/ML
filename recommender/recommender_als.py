@@ -49,4 +49,4 @@ if __name__ == "__main__":
     # The users who are most likely to like a particular movie
     #movie_uers = model.recommendForAllItems(3)
     #movie_uers.show(100, truncate=False)
-    model.save("hdfs://master.tibame/user/clubs/models/recommender/")
+    
