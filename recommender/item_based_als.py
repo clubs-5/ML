@@ -290,7 +290,7 @@ def parse_args():
     parser = argparse.ArgumentParser(
         prog="Movie Recommender",
         description="Run ALS Movie Recommender")
-    parser.add_argument('--path', nargs='?', default='../data/MovieLens',
+    parser.add_argument('--path', nargs='?', default='../clubs/ml-25m',
                         help='input data path')
     parser.add_argument('--movies_filename', nargs='?', default='movies.csv',
                         help='provide movies filename')
