@@ -286,7 +286,7 @@ def tune_ALS(model, train_data, validation_data, maxIter, regParams, ranks):
     return best_model
 
 
-def parse_args(x):
+def parse_args():
     parser = argparse.ArgumentParser(
         prog="Movie Recommender",
         description="Run ALS Movie Recommender")
@@ -296,7 +296,7 @@ def parse_args(x):
                         help='provide movies filename')
     parser.add_argument('--ratings_filename', nargs='?', default='ratings.csv',
                         help='provide ratings filename')
-    parser.add_argument('--movie_name', nargs='?', default='x',
+    parser.add_argument('--movie_name', nargs='?', default='',
                         help='provide your favoriate movie name')
     parser.add_argument('--top_n', type=int, default=10,
                         help='top n movie recommendations')
@@ -304,11 +304,8 @@ def parse_args(x):
 
 
 if __name__ == '__main__':
-    #ask for a movie
-    movie =  input('give me a move name: ')
-
     # get args
-    args = parse_args(movie)
+    args = parse_args()
     data_path = args.path
     movies_filename = args.movies_filename
     ratings_filename = args.ratings_filename
