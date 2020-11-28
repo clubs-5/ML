@@ -309,7 +309,7 @@ if __name__ == '__main__':
     data_path = args.path
     movies_filename = args.movies_filename
     ratings_filename = args.ratings_filename
-    movie_name = args.movie_name
+    movie_name = 'Iron Man' #args.movie_name
     top_n = args.top_n
     # initial spark
     spark = SparkSession \
