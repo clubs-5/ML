@@ -209,6 +209,7 @@ class AlsRecommender:
         for i in range(len(movie_titles)):
             print('{0}: {1}, with rating '
                   'of {2}'.format(i+1, movie_titles[i], scores[i]))
+        return movieIds
 
 
 class Dataset:
@@ -324,6 +325,6 @@ if __name__ == '__main__':
     # set params
     recommender.set_model_params(10, 0.05, 20)
     # make recommendations
-    recommender.make_recommendations(movie_name, top_n)
+    results = recommender.make_recommendations(movie_name, top_n) # results is a list of movieIds and can be used to retrive respected genre 
     # stop
     spark.stop()
