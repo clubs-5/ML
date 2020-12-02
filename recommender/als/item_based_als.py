@@ -194,7 +194,7 @@ class AlsRecommender:
         t0 = time.time()
         raw_recommends = \
             self._inference(self.model, fav_movie, n_recommendations)
-        raw_recommends.show()
+        print(raw_recommends)
         movieIds = [r[0] for r in raw_recommends]
         scores = [r[1] for r in raw_recommends]
         print('It took my system {:.2f}s to make inference \n\
