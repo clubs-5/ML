@@ -39,6 +39,8 @@ if __name__ == "__main__":
     user_movies = model.recommendForAllUsers(3)
     user_movies.show(100, truncate=False)
 
+    print(type(user_movies))
+
     # return specific user result
     result = user_movies.filter(user_movies.userId == 544).collect()
     print(result)
