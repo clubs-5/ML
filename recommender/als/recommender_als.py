@@ -38,7 +38,7 @@ if __name__ == "__main__":
     # Specify the number of movies you would like to recommand for each user
     user_movies = model.recommendForAllUsers(5)
     user_movies.show(100, truncate=False)
-    user_movies.printSchema
+    user_movies.printSchema()
 
     print(type(user_movies))
 
