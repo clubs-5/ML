@@ -27,7 +27,7 @@ if __name__ == "__main__":
     
     # Transform the test data using the model to get predictions
     predicted_test_data = model.transform(test_data)
-    #model.write().overwrite().save("hdfs://master.tibame/user/clubs/spark_mllib_101/movies/movies_recommender/")
+    model.write().overwrite().save("hdfs://master.tibame/user/clubs/spark_mllib_101/movies/movies_recommender/")
 
     # Evalute model performance with test set
     evaluator = RegressionEvaluator(predictionCol="prediction", labelCol="rating", metricName="rmse")
