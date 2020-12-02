@@ -4,7 +4,7 @@ from pyspark.ml.feature import VectorAssembler,VectorIndexer,OneHotEncoder,Strin
 from pyspark.ml.recommendation import ALS, ALSModel
 from pyspark.sql.types import StructType,StructField, StringType, IntegerType
 
-import pyarrow
+import pyarrow as pa
 import redis
 
 if __name__ == "__main__":
