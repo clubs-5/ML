@@ -4,7 +4,7 @@ from pyspark.ml.feature import VectorAssembler,VectorIndexer,OneHotEncoder,Strin
 from pyspark.ml.recommendation import ALS
 from pyspark.ml.evaluation import RegressionEvaluator
 import time
-
+from pyspark.sql.types import StructType,StructField, StringType, IntegerType
 
 if __name__ == "__main__":
 
