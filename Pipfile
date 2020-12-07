@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+pylint = "*"
+
+[packages]
+fuzzywuzzy = "*"
+seaborn = "*"
+ipykernel = "*"
+sklearn = "*"
+pyarrow = "*"
+redis = "*"
+
+[requires]
+python_version = "3.8"

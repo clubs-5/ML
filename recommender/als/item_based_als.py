@@ -285,6 +285,7 @@ def tune_ALS(model, train_data, validation_data, maxIter, regParams, ranks):
                 best_model = model
     print('\nThe best model has {} latent factors and '
           'regularization = {}'.format(best_rank, best_regularization))
+    best_model.write().overwrite().save("hdfs://master.tibame/user/clubs/als_output/")
     return best_model
 
 
