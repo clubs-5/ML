@@ -211,7 +211,7 @@ class AlsRecommender:
         for i in range(len(movie_titles)):
             print('{0}: {1}, with rating '
                   'of {2}'.format(i+1, movie_titles[i], scores[i]))
-        return movieIds
+        return movie_titles #movieIds
 
 
 class Dataset:
